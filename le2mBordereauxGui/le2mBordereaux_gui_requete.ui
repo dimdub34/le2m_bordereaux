@@ -41,7 +41,18 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QDateEdit" name="dateEdit"/>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="date">
+        <date>
+         <year>2000</year>
+         <month>1</month>
+         <day>2</day>
+        </date>
+       </property>
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_heure">

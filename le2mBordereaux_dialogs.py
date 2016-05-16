@@ -35,7 +35,7 @@ class DNew(QtGui.QDialog):
                 raise ValueError
         except UnicodeEncodeError:
             QtGui.QMessageBox.critical(
-                self,  u"Problème",  "Ne pas mettre d'accent svp.")
+                self,  u"Problème",  u"Ne pas mettre d'accent svp.")
             return
         except ValueError:
             QtGui.QMessageBox.critical(

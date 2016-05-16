@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'le2mBordereaux_gui_requete.ui'
 #
-# Created: Wed Apr 29 08:14:44 2015
+# Created: Mon May 16 09:34:39 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -42,6 +42,7 @@ class Ui_Dialog(object):
         self.label_date.setObjectName(_fromUtf8("label_date"))
         self.formLayout.setWidget(1, QtGui.QFormLayout.LabelRole, self.label_date)
         self.dateEdit = QtGui.QDateEdit(Dialog)
+        self.dateEdit.setDate(QtCore.QDate(2000, 1, 2))
         self.dateEdit.setObjectName(_fromUtf8("dateEdit"))
         self.formLayout.setWidget(1, QtGui.QFormLayout.FieldRole, self.dateEdit)
         self.label_heure = QtGui.QLabel(Dialog)
@@ -65,5 +66,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Requete ORSEE", None))
         self.label_expe.setText(_translate("Dialog", "Expérience", None))
         self.label_date.setText(_translate("Dialog", "Date", None))
+        self.dateEdit.setDisplayFormat(_translate("Dialog", "dd/MM/yyyy", None))
         self.label_heure.setText(_translate("Dialog", "Heure", None))
 
