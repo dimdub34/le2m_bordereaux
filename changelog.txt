@@ -1,0 +1,2 @@
+- 05/03/2014
+    . ajout du total des forfait de 2€ et du total des forfaits de 6€. Demandé par l'agence comptable
