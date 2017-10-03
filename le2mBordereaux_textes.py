@@ -47,19 +47,32 @@ AUTEUR = u"<hml><body>" \
         u"</body></html>"
 
 
+# def get_requete(expe, date, heure):
+#     req = u"SELECT sub.lname, sub.fname\n" \
+#           u"FROM or_participants sub, or_experiments exp, or_sessions " \
+#           u"sess, or_participate_at part\n" \
+#           u"WHERE exp.experiment_name = '{}'\n" \
+#           u"AND sess.experiment_id = exp.experiment_id\n" \
+#           u"AND sess.session_start_month = {}\n" \
+#           u"AND sess.session_start_day = {}\n" \
+#           u"AND sess.session_start_hour = {}\n" \
+#           u"AND sess.session_start_minute = {}\n" \
+#           u"AND part.session_id = sess.session_id\n" \
+#           u"AND part.registered = 'y'\n" \
+#           u"AND sub.participant_id = part.participant_id\n" \
+#           u"order by sub.lname".format(expe, date.month, date.day,
+#                                        heure.hour, heure.minute)
+#     return req
+
+
 def get_requete(expe, date, heure):
     req = u"SELECT sub.lname, sub.fname\n" \
           u"FROM or_participants sub, or_experiments exp, or_sessions " \
           u"sess, or_participate_at part\n" \
           u"WHERE exp.experiment_name = '{}'\n" \
           u"AND sess.experiment_id = exp.experiment_id\n" \
-          u"AND sess.session_start_month = {}\n" \
-          u"AND sess.session_start_day = {}\n" \
-          u"AND sess.session_start_hour = {}\n" \
-          u"AND sess.session_start_minute = {}\n" \
+          u"AND sess.session_start = {}{}\n" \
           u"AND part.session_id = sess.session_id\n" \
-          u"AND part.registered = 'y'\n" \
           u"AND sub.participant_id = part.participant_id\n" \
-          u"order by sub.lname".format(expe, date.month, date.day,
-                                       heure.hour, heure.minute)
+          u"order by sub.lname".format(expe, date.strftime("%Y%m%d"), heure.strftime("%H%M"))
     return req
