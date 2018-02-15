@@ -37,6 +37,7 @@ class GuiMain(QtGui.QMainWindow):
         self._config_actions()
 
         self.ui.label_description.setText(config.TITLE)
+        self.ui.label_description.setStyleSheet("color: brown;")
         self.ui.label_logo.setPixmap(
             QtGui.QPixmap(os.path.join(dossier_images, config.LOGO)))
         self.ui.dateEdit.setDate(QtCore.QDate.currentDate())
