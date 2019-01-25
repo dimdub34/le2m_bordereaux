@@ -38,8 +38,9 @@ class GuiMain(QtGui.QMainWindow):
 
         self.ui.label_description.setText(config.TITLE)
         self.ui.label_description.setStyleSheet("color: brown;")
-        self.ui.label_logo.setPixmap(
-            QtGui.QPixmap(os.path.join(dossier_images, config.LOGO)))
+        logo = QtGui.QPixmap(os.path.join(dossier_images, config.LOGO))
+        logo = logo.scaledToWidth(200)
+        self.ui.label_logo.setPixmap(logo)
         self.ui.dateEdit.setDate(QtCore.QDate.currentDate())
         self.ui.dateEdit.setToolTip(u"Date de la session")
         self.ui.timeEdit.setTime(QtCore.QTime.currentTime())
