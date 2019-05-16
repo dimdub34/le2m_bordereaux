@@ -36,8 +36,8 @@ class GuiMain(QtGui.QMainWindow):
 
         self._config_actions()
 
-        self.ui.label_description.setText(config.TITLE)
-        self.ui.label_description.setStyleSheet("color: brown;")
+        # self.ui.label_description.setText(config.TITLE)
+        # self.ui.label_description.setStyleSheet("color: brown;")
         logo = QtGui.QPixmap(os.path.join(dossier_images, config.LOGO))
         logo = logo.scaledToWidth(200)
         self.ui.label_logo.setPixmap(logo)
@@ -86,11 +86,11 @@ class GuiMain(QtGui.QMainWindow):
         self.ui.pushButton_remove.setToolTip(u"Supprimer la sélection")
         self.ui.pushButton_remove.clicked.connect(self._remove_selected)
 
-        self.setFixedSize(670, 750)
-        ecran = QtGui.QApplication.desktop()
-        ecran_w = ecran.width()
-        ecran_h = ecran.height()
-        self.move((ecran_w - self.width()) / 2, (ecran_h - self.height()) / 2)
+        # self.setFixedSize(670, 750)
+        # ecran = QtGui.QApplication.desktop()
+        # ecran_w = ecran.width()
+        # ecran_h = ecran.height()
+        # self.move((ecran_w - self.width()) / 2, (ecran_h - self.height()) / 2)
 
     def _config_actions(self):
         # Menu Fichier
