@@ -74,5 +74,5 @@ def get_requete(expe, date, heure):
           u"AND sess.session_start = {}{}\n" \
           u"AND part.session_id = sess.session_id\n" \
           u"AND sub.participant_id = part.participant_id\n" \
-          u"order by sub.lname".format(expe, date.strftime("%Y%m%d"), heure.strftime("%H%M"))
+          u"order by sub.lname sub.fname".format(expe, date.strftime("%Y%m%d"), heure.strftime("%H%M"))
     return req
